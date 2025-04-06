@@ -11,19 +11,21 @@
 
 are_isomorphic(graph1, graph2) 
 {
-    if(//)
+    if() //simple check for if they are of notable different size, if sizes are not equal, immediately return false
         {
-    //simple check for if they are of notable different size, if sizes are not equal, immediately return false
+         //
         }
    
-    else(//actually begin checking, as the obvious size differences that would make isomorphism impossible are no longer a concern)
+    else() //actually begin checking, as the obvious size differences that would make isomorphism impossible are no longer a concern as they have been checked
         {
-        //case where they are isomorphic
-        return true;
-        }
-    
-        {
-        //case where they are not isomorphic
-        return false;
+            {
+            //case where they are isomorphic
+            return true;
+            }
+        
+            {
+            //case where they are not isomorphic
+            return false;
+            }
         }
 }
