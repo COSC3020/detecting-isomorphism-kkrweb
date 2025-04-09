@@ -21,14 +21,18 @@ What is the worst-case big $\Theta$ time complexity of your algorithm?
 
 
 Name: Kane Kriz
+
 Start Date: 3 April 2025
+
+Last Edited: 9 April 2025
+
 Feedback Request 1 Date: X
 
 
 //
 
 
-Response: Incomplete
+Response: WIP
 Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
 
 Runtime analysis
