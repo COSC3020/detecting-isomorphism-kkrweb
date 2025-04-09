@@ -1,7 +1,7 @@
 // Kane Kriz
 // UWYO COSC 3020
 // Detecting Isomorphism Exercises
-// 5 April 2025
+// 9 April 2025
 //
 
 
@@ -9,23 +9,47 @@
 // avoid repeated work as noted within the directions
 
 
-are_isomorphic(graph1, graph2) 
+
+function areIsomorphic(graph1, graph2)
 {
-    if() //simple check for if they are of notable different size, if sizes are not equal, immediately return false
-        {
-         //
-        }
-   
-    else() //actually begin checking, as the obvious size differences that would make isomorphism impossible are no longer a concern as they have been checked
-        {
-            {
-            //case where they are isomorphic
-            return true;
-            }
-        
-            {
-            //case where they are not isomorphic
-            return false;
-            }
-        }
+    //early check for if graphs have same number of vertices
+    var vertexCount1 = 0;
+    var vertexCount2 = 0;
+    
+    for(var vertex in graph1)
+    {
+        vertexCount1++;
+    }
+    
+    for(var vertex in graph2)
+    {
+        vertexCount2++;
+    }
+    
+    if(vertexCount1 != vertexCount2)
+    {
+        return false;
+    }
+
+    var verticesGraph1 = [];
+    var verticesGraph2 = [];
+    
+    for(var vertex in graph1)
+    {
+        verticesGraph1.push(vertex);
+    }
+    
+    for(var vertex in graph2)
+    {
+        verticesGraph2.push(vertex);
+    }
+
+    var vertexMapping = {};
+    var usedVertices = {};
+
+    // Recursive mapping verification
+    function verifyMapping(currentIndex)
+    {
+        ///////
+    }
 }
