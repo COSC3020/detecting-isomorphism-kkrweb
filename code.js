@@ -47,9 +47,81 @@ function areIsomorphic(graph1, graph2)
     var vertexMapping = {};
     var usedVertices = {};
 
-    // Recursive mapping verification
+
+    
+    //
+
+
+    
+    //mapping verification
+    //recursive
     function verifyMapping(currentIndex)
     {
-        ///////
+        if(currentIndex == verticesGraph1.length)
+        {
+            //check for overall complete mapping
+            for(var i = 0; i < verticesGraph1.length; i++)
+            {
+                var sourceVertex = verticesGraph1[i];
+                var mappedVertex = vertexMapping[sourceVertex];
+                
+                var sourceNeighbors = graph1[sourceVertex];
+                var targetNeighbors = graph2[mappedVertex];
+
+                //verifying number of neighbors from each of the above taken graphs to match, progress if true
+                if(sourceNeighbors.length != targetNeighbors.length)
+                {
+                    return false;
+                }
+                
+                for(var j = 0; j < sourceNeighbors.length; j++)
+                {
+                    var found = false;
+                    
+                    for(var k = 0; k < targetNeighbors.length; k++)
+                    {
+                        if(targetNeighbors[k] == vertexMapping[sourceNeighbors[j]])
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                    
+                    if(!found)
+                    {
+                        return false;
+                    }
+                }
+            }
+            
+            return true; //everything properly mapped
+        }
+
+        var currentVertex = verticesGraph1[currentIndex]; //locating current index being mapped
+        
+        for(var i = 0; i < verticesGraph2.length; i++)
+        {
+            var targetVertex = verticesGraph2[i];
+            
+            if(!usedVertices[targetVertex]) //usedVertices to ensure this actually progresses
+            {
+                vertexMapping[currentVertex] = targetVertex;
+                usedVertices[targetVertex] = true;
+                
+                if(verifyMapping(currentIndex + 1))
+                {
+                    return true;
+                }
+                
+                vertexMapping[currentVertex] = undefined;
+                usedVertices[targetVertex] = false;
+            }
+        }
+        
+        return false; //no valid mapping found
     }
+    
+    return verifyMapping(0); //recursive mapping, begining on first vertex 0 outward
 }
+
+//
