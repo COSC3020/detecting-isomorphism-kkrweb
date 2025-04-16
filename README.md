@@ -34,6 +34,9 @@ Feedback Request 1 Date: 15 April 2025
 
 Feedback Request 2: 16 April 2025
 
+...
+
+
 //
 
 
@@ -69,15 +72,15 @@ This leads to V! possible mappings in the worst case, since each mapping choice 
 
 When a complete mapping is found when `currentIndex` reaches `verticesGraph1.length`, the implementation verifies that all original adjacency relationships observed in the first graph exist in the second. 
 
-This verification step involves checking all edges in both graphs, contributing $O(E)$ work where E is the number of edges.
+This verification step involves checking all vertices and their adjacency lists, adding $O(V^2)$ work in the worst case.
 
 In the assumed worst case, the algorithm must cover all possible vertex mappings.
 
 That, combined with the depth of recursion leads to factorial time complexity, as in the worst scenario it must cover all possible permutations of vertex mappings between the two input graphs. 
 
-Additionally, each V! permutation within this above worst case takes O(E) work to verify all edges for required edge preservation from that of the original graph.
+Additionally, each V! permutation within this above worst case takes O(V^2) work to verify all necessary adjacency relationships.
 
-Due to this, the worst case big theta time complexity of the algorithm is $Θ(V! * E)$.
+Due to this, the worst case big theta time complexity of the algorithm is $Θ(V! * V^2)$.
 
 
 
