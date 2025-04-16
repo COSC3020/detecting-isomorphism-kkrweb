@@ -24,7 +24,7 @@ Name: Kane Kriz
 
 Start Date: 3 April 2025
 
-Last Edited: 9 April 2025
+Last Edited: 15 April 2025
 
 Feedback Request 1 Date: X
 
@@ -35,7 +35,10 @@ Feedback Request 1 Date: X
 Response: WIP
 Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
 
-Runtime analysis
+...
+
+Due to this, the worst case big theta time complexity of the algorithm is ____________.
+
 
 //
 
