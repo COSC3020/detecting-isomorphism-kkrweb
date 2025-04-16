@@ -36,7 +36,7 @@ Response:
 
 Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
 
--
+--------
 
 The implementation checks for graph isomorphism by comparing vertex counts and then attempting to find a valid vertex mapping between the two graphs (that also keeps the observed structure).
 
