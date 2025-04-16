@@ -32,6 +32,11 @@ Feedback Request 1 Date: 15 April 2025
 //
 
 
+Feedback Request 2: 16 April 2025
+
+//
+
+
 Response:
 
 Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
@@ -70,7 +75,9 @@ In the assumed worst case, the algorithm must cover all possible vertex mappings
 
 That, combined with the depth of recursion leads to factorial time complexity, as in the worst scenario it must cover all possible permutations of vertex mappings between the two input graphs. 
 
-Due to this, the worst case big theta time complexity of the algorithm is $Θ(V!)$.
+Additionally, each V! permutation within this above worst case takes O(E) work to verify all edges for required edge preservation from that of the original graph.
+
+Due to this, the worst case big theta time complexity of the algorithm is $Θ(V! * E)$.
 
 
 
