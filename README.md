@@ -26,7 +26,7 @@ Start Date: 3 April 2025
 
 Last Edited: 15 April 2025
 
-Feedback Request 1 Date: X
+Feedback Request 1 Date: 15 April 2025
 
 
 //
@@ -62,7 +62,7 @@ This expands the search tree by V at every processed recursion step.
 
 This leads to V! possible mappings in the worst case, since each mapping choice is forced to reduce potential options in subsequent steps.
 
-When a complete mapping is found when `currentIndex` reaches `verticesGraph1.length`, the implementation verifies that all original adjacency relationships were preserved. 
+When a complete mapping is found when `currentIndex` reaches `verticesGraph1.length`, the implementation verifies that all original adjacency relationships observed in the first graph exist in the second. 
 
 This verification step involves checking all edges in both graphs, contributing $O(E)$ work where E is the number of edges.
 
@@ -79,6 +79,7 @@ Due to this, the worst case big theta time complexity of the algorithm is $Θ(V!
 
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
 
 Citations: 
 
