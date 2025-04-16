@@ -32,12 +32,47 @@ Feedback Request 1 Date: X
 //
 
 
-Response: WIP
+Response:
+
 Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
 
-...
+-
 
-Due to this, the worst case big theta time complexity of the algorithm is ____________.
+The implementation checks for graph isomorphism by comparing vertex counts and then attempting to find a valid vertex mapping between the two graphs (that also keeps the observed structure).
+
+It works via systematic testing of different pairings of vertices between the graphs. 
+
+As it builds a match path between the graphs, it constantly checks whether connections between nodes are preserved as seen within the other compared graph.
+
+The function begins with an early check for potential vertex count mismatches, which provides an immediate rejection if the graphs have different sizes thus making isomorphism impossible.
+
+This check involves counting vertices in both graphs, requiring $O(V)$ time for each graph where V is the number of vertices.
+
+The core of the implementation lies in the `verifyMapping` recursive function.
+
+The function systematically attempts to map vertices from the first input graph to vertices in the second graph while checking if adjacency relationships are preserved as desired for proper isomorphsim.
+
+The function uses the `vertexMapping` object to track current assignments, and uses the `usedVertices` object to prevent duplicate mappings.
+
+For each vertex in the first graph, the algorithm attempts to map it to every possible unused vertex in the second graph. 
+
+At each step of the recursion, there are up to V possible vertices to map to.
+
+This expands the search tree by V at every processed recursion step.
+
+This leads to V! possible mappings in the worst case, since each mapping choice is forced to reduce potential options in subsequent steps.
+
+When a complete mapping is found when `currentIndex` reaches `verticesGraph1.length`, the implementation verifies that all original adjacency relationships were preserved. 
+
+This verification step involves checking all edges in both graphs, contributing $O(E)$ work where E is the number of edges.
+
+In the assumed worst case, the algorithm must cover all possible vertex mappings.
+
+That, combined with the depth of recursion leads to factorial time complexity, as in the worst scenario it must cover all possible permutations of vertex mappings between the two input graphs. 
+
+Due to this, the worst case big theta time complexity of the algorithm is $Θ(V!)$.
+
+
 
 
 //
@@ -45,4 +80,8 @@ Due to this, the worst case big theta time complexity of the algorithm is ______
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
-Citations:
+Citations: 
+
+https://towardsdatascience.com/testing-if-two-graphs-are-isomorphic-cf6c44ab551e/
+
+https://facultyweb.kennesaw.edu/mlavrov/courses/graph-theory/lecture9.pdf
