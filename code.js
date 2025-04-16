@@ -8,6 +8,10 @@
 //Note: algorithm needs to handle both the case where the two graphs are isomorphic and where they are not isomorphic.
 // avoid repeated work as noted within the directions
 
+//Per in-class definition: Isomorphic - Two graphs are isomorphic if they have the same structure (ignoring vertex names)
+
+
+//
 
 
 function areIsomorphic(graph1, graph2)
