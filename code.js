@@ -1,7 +1,7 @@
 // Kane Kriz
-// UWYO COSC 3020
-// Detecting Isomorphism Exercises
-// 9 April 2025
+// UWYO COSC 3020 Algorithms
+// Detecting Isomorphism Exercise - primary js file
+// 15 April 2025
 //
 
 
@@ -12,6 +12,9 @@
 
 function areIsomorphic(graph1, graph2)
 {
+
+    //
+    
     //early check for if graphs have same number of vertices
     var vertexCount1 = 0;
     var vertexCount2 = 0;
@@ -28,9 +31,12 @@ function areIsomorphic(graph1, graph2)
     
     if(vertexCount1 != vertexCount2)
     {
-        return false;
+        return false; 
+        //early rejection based on size mismatch
     }
 
+    //
+    
     var verticesGraph1 = [];
     var verticesGraph2 = [];
     
@@ -47,12 +53,8 @@ function areIsomorphic(graph1, graph2)
     var vertexMapping = {};
     var usedVertices = {};
 
-
-    
     //
 
-
-    
     //mapping verification
     //recursive
     function verifyMapping(currentIndex)
@@ -76,18 +78,18 @@ function areIsomorphic(graph1, graph2)
                 
                 for(var j = 0; j < sourceNeighbors.length; j++)
                 {
-                    var found = false;
+                    var isMapped = false;
                     
                     for(var k = 0; k < targetNeighbors.length; k++)
                     {
                         if(targetNeighbors[k] == vertexMapping[sourceNeighbors[j]])
                         {
-                            found = true;
+                            isMapped = true;
                             break;
                         }
                     }
                     
-                    if(!found)
+                    if(!isMapped)
                     {
                         return false;
                     }
@@ -118,7 +120,7 @@ function areIsomorphic(graph1, graph2)
             }
         }
         
-        return false; //no valid mapping found
+        return false; //no valid mapping isMapped
     }
     
     return verifyMapping(0); //recursive mapping, begining on first vertex 0 outward
